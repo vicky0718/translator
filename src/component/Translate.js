@@ -31,10 +31,13 @@ const Translate = () => {
 
     // Add event listener for exchange icon to swap text and languages
     exchangeIcon.addEventListener("click", () => {
+      // Swap values of text areas
       let tempText = fromText.value;
-      let tempLang = selectTag[0].value;
       fromText.value = toText.value;
       toText.value = tempText;
+
+      // Swap values of select elements
+      let tempLang = selectTag[0].value;
       selectTag[0].value = selectTag[1].value;
       selectTag[1].value = tempLang;
     });
