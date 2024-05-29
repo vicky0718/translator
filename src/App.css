@@ -1,38 +1,217 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0 10px;
+  min-height: 100vh;
+  background: #ffc107;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  min-width: 700px;
+  width: 100%;
+  padding: 30px;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.01);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.wrapper {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.text-input {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.text-input .from-text,
+.text-input .to-text {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.speech-text{
+  display: flex;
+  align-items: center;
+  justify-content: space-around
+}
+
+.speech-text button {
+  margin: 0 5px; /* Add margin to each button for additional spacing */
+}
+
+.text-input textarea {
+  height: 300px;
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  background: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.text-input textarea::placeholder {
+  color: #b7b6b6;
+}
+
+.controls,
+li,
+.icons,
+.icons i {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls {
+  list-style: none;
+  padding: 12px 15px;
+}
+
+.controls .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.controls .row .icons {
+  display: flex;
+  width: auto;
+}
+
+.controls .row .icons i {
+  width: 50px;
+  color: #adadad;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  justify-content: center;
+}
+
+.controls .row.from .icons {
+  padding-right: 15px;
+  border-right: 1px solid #ccc;
+}
+
+.controls .row.to .icons {
+  padding-left: 15px;
+  border-left: 1px solid #ccc;
+}
+
+.controls .row select {
+  color: #333;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background: none;
+  padding-left: 5px;
+}
+
+.text-input textarea::-webkit-scrollbar {
+  width: 4px;
+}
+
+.controls .row select::-webkit-scrollbar {
+  width: 8px;
+}
+
+.text-input textarea::-webkit-scrollbar-track,
+.controls .row select::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.text-input textarea::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 8px;
+}
+
+.controls .row select::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 8px;
+  border-right: 2px solid #ffffff;
+}
+
+.controls .exchange {
+  color: #adadad;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+
+.controls i:active {
+  transform: scale(0.9);
+}
+
+.container button {
+  width: 100%;
+  padding: 14px;
+  outline: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 17px;
+  border-radius: 5px;
+  background: #ffc107;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    min-width: 100%; /* Ensure container takes full width on mobile */
   }
-  to {
-    transform: rotate(360deg);
+
+  .text-input {
+    flex-direction: column;
+    height: 400px; /* Fixed height for mobile view */
+    width: 300px; /* Fixed width for mobile view */
+  }
+
+  .text-input .from-text,
+  .text-input .to-text {
+    width: 100%;
+    height: 100% /* Ensure full width for the text container */
+  }
+
+  .text-input textarea {
+
+    font-size: 16px;
+    margin: 0 auto; /* Centering the text area */
+  }
+
+  .controls .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .controls .row .icons,
+  .controls .row select {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .controls .row .icons {
+    justify-content: flex-start;
+  }
+
+  .controls .row .icons i {
+    width: auto;
+    font-size: 18px;
+    padding: 0 10px;
   }
 }
